@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="externalfile.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Categories</title>
+    <link rel="icon" type="image/x-icon" href="Images/Bold_Minimalist_Creative_Fashion_Logo_Template-removebg-preview.png">
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+
+</head>
+<body>
+    
+        <a href="index.html" >
+         
+          
+          <img
+            src="Images/Bold_Minimalist_Creative_Fashion_Logo_Template-removebg-preview.png"
+            alt="Image of the hatchery Logo"
+            width="100"
+            height="100"
+            class="center1" />
+         
+          </a>
+        
+          
+     
+      <div class="banner">
+        <h1 class="center">BOOK NOW</h1>
+      </div>
+    <div style="display: flex;">
+        <div style="flex: 1;">
+            <h2>Enter your details</h2> 
+            <form id="detailsForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required><br><br>
+        
+                <label for="mobileNumber">Mobile Number:</label>
+                <select id="countryCode" name="countryCode" required>
+                  <option value="" disabled selected>Select a country code</option>
+                  <option value="+94">+94 (Sri Lanka)</option>
+                  <option value="+91">+91 (India)</option>
+                  <option value="+61">+61 (Australia)</option>
+                    <option value="+1">+1 (Canada/USA)</option>
+                    <option value="+44">+44 (UK)</option>
+                    <option value="+54">+54 (Argentina)</option>
+                    <option value="+880">+880 (Bangladesh)</option>
+                    <option value="+855">+855 (Cambodia)</option>
+                    <option value="+49">+49 (Germany)</option>
+                    <option value="+7">+7 (Russia)</option>
+                </select>
+                <input type="text" id="mobileNumber" name="mobileNumber" required><br><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+        
+                <label for="confirmEmail">Confirm Email:</label>
+                <input type="email" id="confirmEmail" name="confirmEmail" required><br><br>
+        
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </form>
+        </div>
+        <div style="flex: 1;">
+            <table class="border1">
+                <tr>
+                  <th class="border1">Date</th>
+                  <td class="border1" id="dateVal">Date value</td>
+                </tr>
+                <tr>
+                  <th class="border1">Time</th>
+                  <td class="border1" id="timeVal">Time value</td>
+                </tr>
+                <tr>
+                  <th class="border1">Duration</th>
+                  <td class="border1" id="duration">Hours</td>
+                </tr>
+                <tr>
+                  <th class="border1">Tickets</th>
+                  <td class="border1">Charges</td>
+                </tr>
+                <tr>
+                  <th class="border1">Sri Lankan Adult</th>
+                  <td class="border1" id="slAdultPrice">0</td>
+                </tr>
+                <tr>
+                  <th class="border1">Sri Lankan Child</th>
+                  <td class="border1" id="slChildPrice">0</td>
+                </tr>
+                <tr>
+                  <th class="border1">Foreign Adult</th>
+                  <td class="border1" id="foreignAdultPrice">0</td>
+                </tr>
+                <tr>
+                  <th class="border1">Foreign Child</th>
+                  <td class="border1" id="foreignChildPrice">0</td>
+                </tr>
+                <tr>
+                  <th class="border1">Infant</th>
+                  <td class="border1">Free</td>
+                </tr>
+                <tr>
+                  <th class="border1">Total</th>
+                  <td class="border1" id="TotalPrice">$0.00</td>
+                </tr>
+              </table>
+        </div>
+    
+    </div>
+
+    <a href="Payment.html" ><button id="continueBtn" onclick="saveFormData()">Continue with Purchase</button></a>
+
+
+<script>
+    const detailsForm = document.getElementById("detailsForm");
+    const continueBtn = document.getElementById("continueBtn");
+
+    // Function to enable the "Continue with purchase" button if all necessary information is provided
+    function checkCompletion() {
+        const fullName = detailsForm.fullName.value;
+        const mobileNumber = detailsForm.mobileNumber.value;
+        const email = detailsForm.email.value;
+        const confirmEmail = detailsForm.confirmEmail.value;
+
+        // Check if all required fields are filled and if the emails match
+        if (fullName && mobileNumber && email && confirmEmail && email === confirmEmail) {
+            continueBtn.disabled = false;
+        } else {
+            continueBtn.disabled = true;
+        }
+    }
+
+    // Call checkCompletion() on form input change
+    detailsForm.addEventListener("input", checkCompletion);
+    // Call checkCompletion() on page load in case of saved data
+    window.addEventListener("load", checkCompletion);
+
+    function saveFormData() {
+        localStorage.setItem("fullName", detailsForm.fullName.value);
+        localStorage.setItem("mobileNumber", detailsForm.mobileNumber.value);
+        localStorage.setItem("email", detailsForm.email.value);
+        localStorage.setItem("confirmEmail", detailsForm.confirmEmail.value);
+        localStorage.setItem("gender", detailsForm.gender.value);
+    }
+
+    // Function to load form data from local storage
+    function loadFormData() {
+        detailsForm.fullName.value = localStorage.getItem("fullName") || "";
+        detailsForm.mobileNumber.value = localStorage.getItem("mobileNumber") || "";
+        detailsForm.email.value = localStorage.getItem("email") || "";
+        detailsForm.confirmEmail.value = localStorage.getItem("confirmEmail") || "";
+        detailsForm.gender.value = localStorage.getItem("gender") || "";
+    }
+
+    // Call loadFormData() on page load to populate form fields if data is available in local storage
+    window.addEventListener("load", loadFormData);
+
+    // Event listener for form submission
+    detailsForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        saveFormData();
+        
+    });
+
+    function updateTableWithData() {
+        const dateVal = localStorage.getItem("selectedDate");
+        const timeVal = localStorage.getItem("selectedSlots");
+        const duration = localStorage.getItem("duration");
+        const timeval=localStorage.getItem("timeval");
+        const slAdultPrice = localStorage.getItem("slAdultPrice");
+        const slChildPrice = localStorage.getItem("slChildPrice");
+        const foreignAdultPrice = localStorage.getItem("foreignAdultPrice");
+        const foreignChildPrice = localStorage.getItem("foreignChildPrice");
+        const TotalPrice=localStorage.getItem("TotalPrice");
+        // Update table elements with retrieved data
+        document.getElementById("dateVal").innerText = dateVal;
+        document.getElementById("timeVal").innerText = timeVal;
+        document.getElementById("duration").innerText = duration;
+        document.getElementById("slAdultPrice").innerText = slAdultPrice;
+        document.getElementById("slChildPrice").innerText = slChildPrice;
+        document.getElementById("foreignAdultPrice").innerText = foreignAdultPrice;
+        document.getElementById("foreignChildPrice").innerText = foreignChildPrice;
+        document.getElementById("TotalPrice").innerText = TotalPrice;
+        
+    }
+
+    // Call the function to update the table on page load
+    window.addEventListener("load", updateTableWithData);
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<hr class="height1">
+<table class="footer">
+    <tr>
+       
+        <td colspan="2">
+            <h1 class="center">Thank you for your Support.<br>People Like you make this world a better place.</h1>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br><br>
+            Contact No: 076-286-0204 <br><br>
+            Email: <a href="mailto:Harindu@gmail.com">Harindu@gmail.com</a><br><br>
+            Address: 17B station Lane, Ahangan Mawatha, Unawatuna<br><br>
+            <a href="https://www.instagram.com/">Follow us on Social Media</a>
+        </td>
+        <td>
+            <div class="right">
+              <img src="Images/Bold_Minimalist_Creative_Fashion_Logo_Template-removebg-preview.png" alt="" width="250" class="dis">
+
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

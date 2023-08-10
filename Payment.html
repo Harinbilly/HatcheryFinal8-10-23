@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="externalfile.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Categories</title>
+    <link rel="icon" type="image/x-icon" href="Images/Bold_Minimalist_Creative_Fashion_Logo_Template-removebg-preview.png">
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    
+
+</head>
+<body>
+    
+        <a href="index.html">
+            <img class="center1" src="Images/Bold_Minimalist_Creative_Fashion_Logo_Template-removebg-preview.png" alt="" width="100" height="100">
+        </a> 
+  
+    <div class="banner">
+        <h1 class="center">BOOK NOW</h1>  
+    </div>
+
+    <div style="display: flex;">
+        <div style="flex: 1;">
+            <h2>Payment details</h2>
+            <form id="paymentForm">
+                <label for="cardNumber">Card number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required><br><br>
+
+        <label for="expiryDate">Expiry date:</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required><br><br>
+
+        <label for="cvc">CVC / CVV:</label>
+        <input type="text" id="cvc" name="cvc" required><br><br>
+
+        <label for="nameOnCard">Name on card:</label>
+        <input type="text" id="nameOnCard" name="nameOnCard" required><br><br>
+    </form>
+
+       <a href="Confirmation.html" > <button type="submit" onclick="" id="payButton" disabled>Pay <span id="amount">$.00</span></button></a>
+    
+        </div>
+        <div style="flex: 1;">
+            <table class="border1">
+                <tr>
+                  <th class="border1">Date</th>
+                  <td class="border1" id="dateVal">Date value</td>
+                </tr>
+                <tr>
+                  <th class="border1">Time</th>
+                  <td class="border1" id="timeVal">Time value</td>
+                </tr>
+                <tr>
+                  <th class="border1">Duration</th>
+                  <td class="border1" id="duration">Hours</td>
+                </tr>
+                <tr>
+                  <th class="border1">Tickets</th>
+                  <td class="border1">Charges</td>
+                </tr>
+                <tr>
+                  <th class="border1">Sri Lankan Adult</th>
+                  <td  class="border1" id="slAdultPrice">0</td>
+                </tr>
+                <tr>
+                  <th class="border1">Sri Lankan Child</th>
+                  <td class="border1" id="slChildPrice">0</td>
+                </tr>
+                <tr>
+                  <th class="border1">Foreign Adult</th>
+                  <td class="border1" id="foreignAdultPrice">0</td>
+                </tr>
+                <tr>
+                  <th class="border1">Foreign Child</th>
+                  <td class="border1" id="foreignChildPrice">0</td>
+                </tr>
+                <tr>
+                  <th class="border1">Infant</th>
+                  <td class="border1">Free</td>
+                </tr>
+                <tr>
+                  <th class="border1" >Total</th>
+                  <td  class="border1" id="TotalPrice">$0.00</td>
+                </tr>
+              </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <script>
+                function paymentForm() {
+        const cardNumber = detailsForm.nameOnCard.value;
+        const expiryDate = detailsForm.expiryDate.value;
+        const cvc = detailsForm.cvc.value;
+        const nameOnCard = detailsForm.nameOnCard.value;
+
+        // Check if all required fields are filled and if the emails match
+        if (cardNumber && expiryDate && cvc && nameOnCard) {
+            continueBtn.disabled = true;
+        } else {
+            continueBtn.disabled = false;
+        }
+    }
+
+
+
+
+                 function updateTableWithData() {
+                  const dateVal = localStorage.getItem("selectedDate");
+        const timeVal = localStorage.getItem("selectedSlots");
+        const duration = localStorage.getItem("duration");
+        const timeval=localStorage.getItem("timeval");
+        const slAdultPrice = localStorage.getItem("slAdultPrice");
+        const slChildPrice = localStorage.getItem("slChildPrice");
+        const foreignAdultPrice = localStorage.getItem("foreignAdultPrice");
+        const foreignChildPrice = localStorage.getItem("foreignChildPrice");
+        const TotalPrice=localStorage.getItem("TotalPrice");
+        // Update table elements with retrieved data
+        document.getElementById("dateVal").innerText = dateVal;
+        document.getElementById("timeVal").innerText = timeVal;
+        document.getElementById("duration").innerText = duration;
+        document.getElementById("slAdultPrice").innerText = slAdultPrice;
+        document.getElementById("slChildPrice").innerText = slChildPrice;
+        document.getElementById("foreignAdultPrice").innerText = foreignAdultPrice;
+        document.getElementById("foreignChildPrice").innerText = foreignChildPrice;
+        document.getElementById("TotalPrice").innerText = TotalPrice;
+    }
+
+    // Call the function to update the table on page load
+    window.addEventListener("load", updateTableWithData);
+
+    const amount=localStorage.getItem("TotalPrice");
+
+    document.getElementById("amount").innerText ="$"+amount;
+    
+            </script>
+
+
+
+
+    
+    <br>
+    <hr  class="height1">
+    <table class="footer">
+        <tr>
+            
+            <td colspan="2">
+                <h1 class="center">Thank you for your Support.<br>People Like you make this world a better place.</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br><br>
+                Contact No: 076-286-0204 <br><br>
+                Email: <a href="mailto:Harindu@gmail.com">Harindu@gmail.com</a><br><br>
+                Address: 17B station Lane, Ahangan Mawatha, Unawatuna<br><br>
+                <a href="https://www.instagram.com/">Follow us on Social Media</a>
+            </td>
+            <td>
+                <div class="right">
+                  <img src="Images/Bold_Minimalist_Creative_Fashion_Logo_Template-removebg-preview.png" alt="" width="250" class="dis">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    
+</body>
+</html>

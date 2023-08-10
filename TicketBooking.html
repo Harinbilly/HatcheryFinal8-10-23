@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="externalfile.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <title>Turtle Categories</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="Images/Bold_Minimalist_Creative_Fashion_Logo_Template-removebg-preview.png"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"
+    />
+  </head>
+  <body>
+    
+      <a href="index.html" >
+       
+        
+        <img
+          src="Images/Bold_Minimalist_Creative_Fashion_Logo_Template-removebg-preview.png"
+          alt="Image of the hatchery Logo"
+          width="100"
+          height="100" 
+          class="center1"/>
+       
+        </a>
+      
+        
+   
+    <div class="banner">
+      <h1 class="center">BOOK NOW</h1>
+    </div>
+ 
+
+    <h1>Dates</h1>
+    <p>
+      Pick Visit Date:
+      <input
+        type="text"
+        id="datepicker"
+        value="9 Oct 2014"
+        class="datepicker"
+      />
+    </p>
+
+    <h1>Guests</h1>
+    <p>Select the number of tickets for each Category <br /></p>
+
+    <div class="grid-container1">
+      <div>
+        <p>
+          Sri Lankan Adult
+          <button onclick="SlAdult(-1)">-</button>
+          <span id="SlAdult">0</span>
+          <button onclick="SlAdult(1)">+</button>
+        </p>
+      </div>
+
+      <div>
+        <p>
+          Sri Lankan Child
+          <button onclick="SlChild(-1)">-</button>
+          <span id="SlChild">0</span>
+          <button onclick="SlChild(1)">+</button>
+        </p>
+      </div>
+
+      <div>
+        <p>
+          Foreigner Adult
+          <button onclick="ForeignAdult(-1)">-</button>
+          <span id="ForeignAdult">0</span>
+          <button onclick="ForeignAdult(1)">+</button>
+        </p>
+      </div>
+
+      <div>
+        <p>
+          Foreigner Child
+          <button onclick="ForeignChild(-1)">-</button>
+          <span id="ForeignChild">0</span>
+          <button onclick="ForeignChild(1)">+</button>
+        </p>
+      </div>
+
+      <div>
+        <p>
+          Infant
+          <button onclick="Infant(-1)">-</button>
+          <span id="Infant">0</span>
+          <button onclick="Infant(1)">+</button>
+        </p>
+      </div>
+    </div>
+    <h1>Duration</h1>
+
+    <p>
+      The turtle hatchery will operate all seven days of the week from 07.00 am
+      to 6.00 pm. Please note that every day from 10.00 am to 1.00 pm and from
+      3.00 pm to 6.00 pm will be considered as peak hours.
+    </p>
+    <div id="timeSlots">
+      <button class="dateSelectButtons">7.00-8.00</button>
+      <button class="dateSelectButtons">8.00-9.00</button>
+      <button class="dateSelectButtons">9.00-10.00</button>
+      <button class="dateSelectButtons">10.00-11.00</button>
+      <button class="dateSelectButtons">11.00-12.00</button>
+      <button class="dateSelectButtons">12.00-13.00</button>
+      <button class="dateSelectButtons">13.00-14.00</button>
+      <button class="dateSelectButtons">14.00-15.00</button>
+      <button class="dateSelectButtons">15.00-16.00</button>
+      <button class="dateSelectButtons">16.00-17.00</button>
+      <button class="dateSelectButtons">17.00-18.00</button>
+    </div>
+    <br />
+    <table class="border1">
+      <tr >
+        <th class="border1">Date</th>
+        <td id="dateVal" class="border1">Date value</td>
+      </tr>
+      <tr>
+        <th class="border1">Time</th>
+        <td id="timeVal" class="border1">Time value</td>
+      </tr>
+      <tr>
+        <th class="border1">Duration</th>
+        <td class="border1" id="duration">Hours</td>
+      </tr>
+      <tr>
+        <th class="border1">Tickets</th>
+        <td class="border1">Charges</td>
+      </tr>
+      <tr>
+        <th class="border1">Sri Lankan Adult</th>
+        <td class="border1" id="slAdultPrice">0</td>
+      </tr>
+      <tr>
+        <th class="border1">Sri Lankan Child</th>
+        <td id="slChildPrice" class="border1">0</td>
+      </tr>
+      <tr>
+        <th class="border1">Foreign Adult</th>
+        <td id="foreignAdultPrice" class="border1">0</td>
+      </tr>
+      <tr>
+        <th class="border1">Foreign Child</th>
+        <td class="border1" id="foreignChildPrice">0</td>
+      </tr>
+      <tr>
+        <th class="border1">Infant</th>
+        <td class="border1">Free</td>
+      </tr>
+      <tr>
+        <th class="border1">Total</th>
+        <td id="TotalPrice" class="border1">$0.00</td>
+      </tr>
+    </table>
+    <br>
+    <a href="Details.html" class="button-link">Continue with purchase</a>
+    <br />
+    <hr class="height1" />
+    <table  class="footer">
+      <tr>
+        
+        <td colspan="2">
+          <h1 class="center">
+            Thank you for your Support.<br />People Like you make this world a
+            better place.
+          </h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br /><br />
+          Contact No: 076-286-0204 <br /><br />
+          Email: <a href="mailto:Harindu@gmail.com">Harindu@gmail.com</a
+          ><br /><br />
+          Address: 17B station Lane, Ahangan Mawatha, Unawatuna<br /><br />
+          <a href="https://www.instagram.com/">Follow us on Social Media</a>
+        </td>
+        <td>
+          <div class="right">
+            <img
+              src="Images/Bold_Minimalist_Creative_Fashion_Logo_Template-removebg-preview.png"
+              alt=""
+              width="250pt"
+              class="dis"
+            />
+          </div>
+        </td>
+      </tr>
+    </table>
+    <script>
+      window.onload = function() {
+      localStorage.clear();
+    };
+      // <!--Consecutive button selection-->
+      function handleSlotSelection(slot) {
+        //check whether slot is alearly selected
+        if (selectedSlots.includes(slot)) {
+          return;
+        } else {
+          const currentSlotIndex = parseInt(slot.split("-")[0]);
+          const firstSlotIndex =
+            selectedSlots.length > 0
+              ? parseInt(selectedSlots[0].split("-")[0])
+              : -1;
+          const lastSlotIndex =
+            selectedSlots.length > 0
+              ? parseInt(selectedSlots[selectedSlots.length - 1].split("-")[0])
+              : -1;
+
+          if (selectedSlots.length === 0) {
+            selectedSlots.push(slot);
+          } else if (selectedSlots.length === 1) {
+            if (
+              currentSlotIndex === firstSlotIndex + 1 ||
+              currentSlotIndex === firstSlotIndex - 1
+            ) {
+              selectedSlots.push(slot);
+            } else {
+              selectedSlots = [slot];
+            }
+          } else {
+            if (
+              currentSlotIndex === lastSlotIndex + 1 ||
+              currentSlotIndex === firstSlotIndex - 1
+            ) {
+              selectedSlots.push(slot);
+            } else if (
+              currentSlotIndex === firstSlotIndex + 1 ||
+              currentSlotIndex === lastSlotIndex - 1
+            ) {
+              selectedSlots.unshift(slot);
+            } else {
+              selectedSlots = [slot];
+            }
+          }
+        }
+
+        updateButtons();
+        document.getElementById("timeVal").innerHTML = selectedSlots;
+        let duration = selectedSlots.length;
+        localStorage.setItem("duration", duration);
+        localStorage.setItem("selectedSlots", JSON.stringify(selectedSlots));
+        document.getElementById("duration").innerHTML = duration;
+        updateTotalPrice();
+      }
+
+      function updateButtons() {
+        const buttons = document.getElementsByClassName("dateSelectButtons");
+        for (const button of buttons) {
+          const slot = button.textContent;
+          if (selectedSlots.includes(slot)) {
+            button.style.backgroundColor = "green";
+          } else {
+            button.style.backgroundColor = "";
+          }
+        }
+      }
+
+      let selectedSlots = []; //set global variable for slots
+
+      function resetSelection() {
+        selectedSlots = [];
+        updateButtons();
+      }
+
+      const buttons = document.getElementsByClassName("dateSelectButtons");
+      for (const button of buttons) {
+        button.addEventListener("click", function () {
+          const slot = button.textContent;
+          handleSlotSelection(slot);
+        });
+      }
+
+      //date picking
+      var picker = new Pikaday({
+        field: document.getElementById("datepicker"),
+        onSelect: function (date) {
+          localStorage.setItem("selectedDate", picker.toString());
+          document.getElementById("dateVal").innerHTML = date.toDateString();
+        },
+      });
+
+      var selectedDate = localStorage.getItem("selectedDate");
+      if (selectedDate) {
+        picker.setDate(new Date(selectedDate));
+      }
+
+      function calPrice(peakPrice, offPeakPrice, units) {
+        let totalPrice = 0;
+        for (i = 0; i < selectedSlots.length; i++) {
+          if (
+            selectedSlots[i] == "10.00-11.00" ||
+            selectedSlots[i] == "11.00-12.00" ||
+            selectedSlots[i] == "12.00-13.00" ||
+            selectedSlots[i] == "15.00-16.00" ||
+            selectedSlots[i] == "16.00-17.00" ||
+            selectedSlots[i] == "17.00-18.00"
+          ) {
+            var unitPrice = peakPrice;
+          } else {
+            var unitPrice = offPeakPrice;
+          }
+          totalPrice = totalPrice + unitPrice * units;
+        }
+        return totalPrice;
+      }
+
+      //function to update total price
+      function updateTotalPrice() {
+        let adults = localStorage.getItem("SlAdult");
+        let children = localStorage.getItem("SlChild");
+        let foreignAdults = localStorage.getItem("ForeignAdult");
+        let foreignChildren = localStorage.getItem("ForeignChild");
+
+        let slAdultPrice = calPrice(6, 4, adults);
+        localStorage.setItem("slAdultPrice", slAdultPrice);
+
+        let slChildPrice = calPrice(3, 2, children);
+        localStorage.setItem("slChildPrice", slChildPrice);
+
+        let foreignAdultPrice = calPrice(13, 10, foreignAdults);
+        localStorage.setItem("foreignAdultPrice", foreignAdultPrice);
+
+        let foreignChildPrice = calPrice(8, 5, foreignChildren);
+        localStorage.setItem("foreignChildPrice", foreignChildPrice);
+
+        let TotalPrice=slAdultPrice+slChildPrice+foreignAdultPrice+foreignChildPrice;
+          localStorage.setItem("TotalPrice",TotalPrice);
+
+        document.getElementById("slAdultPrice").innerText = slAdultPrice;
+        document.getElementById("slChildPrice").innerText = slChildPrice;
+        document.getElementById("foreignAdultPrice").innerText =
+          foreignAdultPrice;
+        document.getElementById("foreignChildPrice").innerText =
+          foreignChildPrice;
+
+          
+          document.getElementById("TotalPrice").innerText=TotalPrice;
+      }
+
+      //SLADULT
+      function SlAdult(click) {
+        const SlAdult = document.getElementById("SlAdult");
+        const sumvalue = parseInt(SlAdult.innerText) + click;
+        localStorage.setItem("SlAdult", sumvalue);
+        SlAdult.innerText = sumvalue;
+
+        if (sumvalue < 0) {
+          SlAdult.innerText = 0;
+          localStorage.setItem("SlAdult", 0);
+        }
+      }
+
+      //SLCHILD
+      function SlChild(click) {
+        const SlChild = document.getElementById("SlChild");
+        const sumvalue = parseInt(SlChild.innerText) + click;
+        localStorage.setItem("SlChild", sumvalue);
+        SlChild.innerText = sumvalue;
+
+        if (sumvalue < 0) {
+          SlChild.innerText = 0;
+          localStorage.setItem("SlChild", 0);
+        }
+      }
+
+      //FOREIGN CHILD
+      function ForeignChild(click) {
+        const ForeignChild = document.getElementById("ForeignChild");
+        const sumvalue = parseInt(ForeignChild.innerText) + click;
+
+        ForeignChild.innerText = sumvalue;
+        localStorage.setItem("ForeignChild", sumvalue);
+
+        if (sumvalue < 0) {
+          ForeignChild.innerText = 0;
+          localStorage.setItem("ForeignChild", 0);
+        }
+      }
+
+      //FOREIGN ADULT
+      function ForeignAdult(click) {
+        const ForeignAdult = document.getElementById("ForeignAdult");
+        const sumvalue = parseInt(ForeignAdult.innerText) + click;
+        localStorage.setItem("ForeignAdult", sumvalue);
+        ForeignAdult.innerText = sumvalue;
+
+        if (sumvalue < 0) {
+          ForeignAdult.innerText = 0;
+          localStorage.setItem("ForeignAdult", 0);
+        }
+      }
+
+      //INFANT
+      function Infant(click) {
+        const Infant = document.getElementById("Infant");
+        const sumvalue = parseInt(Infant.innerText) + click;
+        localStorage.setItem("Infant", sumvalue);
+        Infant.innerText = sumvalue;
+
+        if (sumvalue < 0) {
+          Infant.innerText = 0;
+          localStorage.setItem("Infant", 0);
+        }
+      }
+
+      
+    </script>
+  </body>
+</html>
